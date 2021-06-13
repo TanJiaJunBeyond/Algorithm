@@ -25,7 +25,7 @@ object TwoSumKotlin {
      */
     private fun twoSum(numbers: IntArray, target: Int): IntArray {
         numbers.forEachIndexed { index, number ->
-            for (i in index + 1..numbers.size) {
+            for (i in index + 1 until numbers.size) {
                 if (number + numbers[i] == target) {
                     return intArrayOf(index, i)
                 }
