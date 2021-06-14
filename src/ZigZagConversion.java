@@ -47,7 +47,7 @@ class ZigZagConversion {
         if (numRows == 1) {
             return str;
         }
-        // 根据行数创建StringBuilder数组
+        // 根据长度是行数的容量StringBuilder数组
         StringBuilder[] stringBuilders = new StringBuilder[numRows];
         for (int i = 0; i < numRows; i++) {
             stringBuilders[i] = new StringBuilder();

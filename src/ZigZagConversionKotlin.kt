@@ -48,7 +48,7 @@ object ZigZagConversionKotlin {
         if (numRows == 1) {
             return str
         }
-        // 根据行数创建StringBuilder数组
+        // 根据长度是行数的容量StringBuilder数组
         val stringBuilders = Array(numRows, init = { StringBuilder() })
         var index = 0
         var row = 0
