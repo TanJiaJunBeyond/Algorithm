@@ -12,21 +12,21 @@ object AddTwoNumbersKotlin {
         // 示例一
         print("示例一：")
         val firstNode =
-            Node(
-                2,
                 Node(
-                    4,
-                    Node(3)
+                        2,
+                        Node(
+                                4,
+                                Node(3)
+                        )
                 )
-            )
         val secondNode =
-            Node(
-                5,
                 Node(
-                    6,
-                    Node(4)
+                        5,
+                        Node(
+                                6,
+                                Node(4)
+                        )
                 )
-            )
         printNode(addTwoNumbers(firstNode, secondNode))
 
         print("\n")
@@ -42,36 +42,36 @@ object AddTwoNumbersKotlin {
         // 示例三
         print("示例三：")
         val fifthNode =
-            Node(
-                9,
                 Node(
-                    9,
-                    Node(
                         9,
                         Node(
-                            9,
-                            Node(
                                 9,
                                 Node(
-                                    9,
-                                    Node(9)
+                                        9,
+                                        Node(
+                                                9,
+                                                Node(
+                                                        9,
+                                                        Node(
+                                                                9,
+                                                                Node(9)
+                                                        )
+                                                )
+                                        )
                                 )
-                            )
                         )
-                    )
                 )
-            )
         val sixthNode =
-            Node(
-                9,
                 Node(
-                    9,
-                    Node(
                         9,
-                        Node(9)
-                    )
+                        Node(
+                                9,
+                                Node(
+                                        9,
+                                        Node(9)
+                                )
+                        )
                 )
-            )
         printNode(addTwoNumbers(fifthNode, sixthNode))
 
         print("\n")
@@ -97,15 +97,19 @@ object AddTwoNumbersKotlin {
         val dummy = Node(-1)
         var node: Node = dummy
         var carry = 0
+        // 遍历两个链表
         while (firstNode != null || secondNode != null) {
+            // 如果两个链表的长度不相同的话，就在短的链表的后面通过添加若干个0
             val firstValue = firstNode?.item ?: 0
             val secondValue = secondNode?.item ?: 0
             val value = firstValue + secondValue + carry
             val newItem = value.rem(10)
+            // 相加后的进位值通过carry来存储
             carry = value.div(10)
             val newNode = Node(newItem)
             firstNode?.let { firstNode = it.next }
             secondNode?.let { secondNode = it.next }
+            // 如果在遍历完这两个链表后，carry的值大于0，那么就应该在链表的后面增加一个新的结点来存储这个值
             if (firstNode == null && secondNode == null && carry > 0) {
                 newNode.next = Node(carry)
             }
@@ -134,8 +138,8 @@ object AddTwoNumbersKotlin {
     }
 
     private data class Node(
-        var item: Int,
-        var next: Node? = null
+            var item: Int,
+            var next: Node? = null
     )
 
 }

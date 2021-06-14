@@ -54,7 +54,7 @@ class LongestSubstringWithoutRepeatingCharacters {
         // 遍历字符串中的字符
         for (int i = 0, length = str.length(); i < length; i++) {
             if (i > 0) {
-                // 左指针向右移动一格
+                // 移除一个字符，左指针向右移动一格
                 chars.remove(str.charAt(i - 1));
             }
             while (right < length && !chars.contains(str.charAt(right))) {

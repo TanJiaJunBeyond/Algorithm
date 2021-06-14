@@ -72,11 +72,14 @@ class AddTwoNumbers {
         Node dummyNode = new Node(-1);
         Node node = dummyNode;
         int carry = 0;
+        // 遍历两个链表
         while (firstNode != null || secondNode != null) {
+            // 如果两个链表的长度不相同的话，就在短的链表的后面通过添加若干个0
             int firstValue = firstNode != null ? firstNode.item : 0;
             int secondValue = secondNode != null ? secondNode.item : 0;
             int value = firstValue + secondValue + carry;
             int newItem = value % 10;
+            // 相加后的进位值通过carry来存储
             carry = value / 10;
             Node newNode = new Node(newItem);
             if (firstNode != null) {
@@ -85,6 +88,7 @@ class AddTwoNumbers {
             if (secondNode != null) {
                 secondNode = secondNode.next;
             }
+            // 如果在遍历完这两个链表后，carry的值大于0，那么就应该在链表的后面增加一个新的结点来存储这个值
             if (firstNode == null && secondNode == null && carry > 0) {
                 newNode.next = new Node(carry);
             }

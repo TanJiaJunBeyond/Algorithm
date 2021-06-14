@@ -48,11 +48,11 @@ object LongestSubstringWithoutRepeatingCharactersKotlin {
         // 右指针
         var right = 0
         // 哈希集合，记录出现的字符
-        val chars = mutableSetOf<Char>()
+        val chars = hashSetOf<Char>()
         // 遍历字符串中的字符
         str.forEachIndexed { index, _ ->
             if (index > 0) {
-                // 左指针向右移动一格
+                // 移除一个字符，左指针向右移动一格
                 chars.remove(str[index - 1])
             }
             while (right < str.length && !chars.contains(str[right])) {
