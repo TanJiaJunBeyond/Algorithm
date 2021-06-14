@@ -13,18 +13,27 @@ class LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
         // 示例一
         System.out.print("示例一：");
+
         String firstStr = "abcabcbb";
         System.out.println(lengthOfLongestSubstring(firstStr));
 
+        System.out.print("\n");
+
         // 示例二
         System.out.print("示例二：");
+
         String secondStr = "bbbbb";
         System.out.println(lengthOfLongestSubstring(secondStr));
 
+        System.out.print("\n");
+
         // 示例三
         System.out.print("示例三：");
+
         String thirdStr = "pwwkew";
         System.out.println(lengthOfLongestSubstring(thirdStr));
+
+        System.out.print("\n");
     }
 
     /**

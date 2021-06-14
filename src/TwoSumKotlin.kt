@@ -9,9 +9,29 @@ object TwoSumKotlin {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val numbers = intArrayOf(2, 7, 11, 15)
-        val target = 9
-        print(hashTwoSum(numbers, target).contentToString())
+        // 示例一
+        println("示例一")
+
+        val firstNumbers = intArrayOf(2, 7, 11, 15)
+        val firstTarget = 9
+        println(hashTwoSum(firstNumbers, firstTarget).contentToString())
+
+        print("\n")
+
+        // 示例二
+        println("示例二")
+
+        val secondNumbers = intArrayOf(3, 2, 4)
+        val secondTarget = 6
+        println(hashTwoSum(secondNumbers, secondTarget).contentToString())
+
+        print("\n")
+
+        // 示例三
+        println("示例三")
+        val thirdNumbers = intArrayOf(3, 3)
+        val thirdTarget = 6
+        println(hashTwoSum(thirdNumbers, thirdTarget).contentToString())
     }
 
     /**

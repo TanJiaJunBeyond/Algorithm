@@ -10,6 +10,7 @@ class AddTwoNumbers {
     public static void main(String[] args) {
         // 示例一
         System.out.print("示例一：");
+
         Node firstNode =
                 new Node(2,
                         new Node(4,
@@ -24,6 +25,7 @@ class AddTwoNumbers {
 
         // 示例二
         System.out.print("示例二：");
+
         Node thirdNode = new Node(0);
         Node fourthNode = new Node(0);
         printNode(addTwoNumbers(thirdNode, fourthNode));
@@ -32,6 +34,7 @@ class AddTwoNumbers {
 
         // 示例三
         System.out.print("示例三：");
+
         Node fifthNode =
                 new Node(9,
                         new Node(9,
@@ -51,6 +54,7 @@ class AddTwoNumbers {
 
         // 示例四
         System.out.print("示例四：");
+
         Node seventhNode = new Node(2);
         Node eightNode = new Node(8);
         printNode(addTwoNumbers(seventhNode, eightNode));
@@ -90,6 +94,11 @@ class AddTwoNumbers {
         return dummyNode.next;
     }
 
+    /**
+     * 打印结点
+     *
+     * @param node 结点
+     */
     private static void printNode(Node node) {
         System.out.print("[");
         while (node != null) {

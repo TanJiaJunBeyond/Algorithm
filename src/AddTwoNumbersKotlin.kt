@@ -115,6 +115,11 @@ object AddTwoNumbersKotlin {
         return dummy.next ?: dummy
     }
 
+    /**
+     * 打印结点
+     *
+     * @param node 结点
+     */
     private fun printNode(node: Node?) {
         print("[")
         var curNode: Node? = node

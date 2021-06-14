@@ -13,16 +13,23 @@ object LongestSubstringWithoutRepeatingCharactersKotlin {
     fun main(args: Array<String>) {
         // 示例一
         print("示例一：")
+
         val firstStr = "abcabcbb"
         println(lengthOfLongestSubstring(firstStr))
 
+        print("\n")
+
         // 示例二
         print("示例二：")
+
         val secondStr = "bbbbb"
         println(lengthOfLongestSubstring(secondStr))
 
+        print("\n")
+
         // 示例三
         print("示例三：")
+
         val thirdStr = "pwwkew"
         println(lengthOfLongestSubstring(thirdStr))
     }

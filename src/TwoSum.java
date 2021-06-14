@@ -12,9 +12,29 @@ import java.util.Map;
 class TwoSum {
 
     public static void main(String[] args) {
-        int[] numbers = {2, 7, 11, 15};
-        int target = 9;
-        System.out.println(Arrays.toString(hashTwoSum(numbers, target)));
+        // 示例一
+        System.out.println("示例一");
+
+        int[] firstNumbers = {2, 7, 11, 15};
+        int firstTarget = 9;
+        System.out.println(Arrays.toString(hashTwoSum(firstNumbers, firstTarget)));
+
+        System.out.print("\n");
+
+        // 示例二
+        System.out.println("示例二");
+
+        int[] secondNumbers = {3, 2, 4};
+        int secondTarget = 6;
+        System.out.println(Arrays.toString(hashTwoSum(secondNumbers, secondTarget)));
+
+        System.out.print("\n");
+
+        // 示例三
+        System.out.println("示例三");
+        int[] thirdNumbers = {3, 3};
+        int thirdTarget = 6;
+        System.out.println(Arrays.toString(hashTwoSum(thirdNumbers, thirdTarget)));
     }
 
     /**
