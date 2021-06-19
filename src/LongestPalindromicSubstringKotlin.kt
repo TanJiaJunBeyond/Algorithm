@@ -53,6 +53,7 @@ object LongestPalindromicSubstringKotlin {
     private fun longestPalindrome(str: String): String {
         var maxLength = 0
         var result = ""
+        // 枚举所有的元素
         str.forEachIndexed { index, _ ->
             for (i in index + 1..str.length) {
                 val substring = str.substring(index, i)
@@ -66,7 +67,7 @@ object LongestPalindromicSubstringKotlin {
     }
 
     /**
-     * 判断是否为回文子串
+     * 判断字符串是否为回文串
      *
      * @param str 字符串
      * @return 结果
@@ -74,10 +75,13 @@ object LongestPalindromicSubstringKotlin {
     private fun isPalindromicSubstring(str: String): Boolean {
         val length = str.length
         for (i in 0 until length / 2) {
+            // 找出该元素作为回文子串的起始位置还有结束位置
             if (str[i] != str[length - i - 1]) {
+                // 如果其中一个不相同，证明该字符串不是回文串
                 return false
             }
         }
+        // 如果字符都相同，证明该字符串是回文串
         return true
     }
 
@@ -92,12 +96,17 @@ object LongestPalindromicSubstringKotlin {
     private fun expandAroundCenterLongestPalindrome(str: String): String {
         var start = 0
         var end = 0
-        str.forEachIndexed { index, c ->
+        str.forEachIndexed { index, _ ->
+            // 长度是奇数
             val oddLength = getExpandAroundCenterLength(str = str, left = index, right = index)
+            // 长度是偶数
             val evenLength = getExpandAroundCenterLength(str = str, left = index, right = index + 1)
+            // 得到最大长度
             val maxLength = max(oddLength, evenLength)
             if (maxLength > end - start) {
+                // 得到起始位置
                 start = index - (maxLength - 1) / 2
+                // 得到结束位置
                 end = index + maxLength / 2
             }
         }
@@ -115,10 +124,13 @@ object LongestPalindromicSubstringKotlin {
     private fun getExpandAroundCenterLength(str: String, left: Int, right: Int): Int {
         var l = left
         var r = right
+        // 找出该元素作为回文子串的起始位置还有结束位置
         while ((l >= 0 && r < str.length && str[l] == str[r])) {
+            // 如果符合条件，左指针向左移动一格，右指针向右移动一格
             l--
             r++
         }
+        // 得到长度
         return r - l - 1
     }
 

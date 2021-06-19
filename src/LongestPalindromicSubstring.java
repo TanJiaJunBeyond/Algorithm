@@ -50,6 +50,7 @@ class LongestPalindromicSubstring {
     private static String longestPalindrome(String str) {
         int maxLength = 0;
         String result = "";
+        // 枚举所有的元素
         for (int i = 0, iLen = str.length(); i < iLen; i++) {
             for (int j = i + 1, jLen = str.length(); j <= jLen; j++) {
                 String substring = str.substring(i, j);
@@ -63,7 +64,7 @@ class LongestPalindromicSubstring {
     }
 
     /**
-     * 判断是否为回文子串
+     * 判断字符串是否为回文串
      *
      * @param str 字符串
      * @return 结果
@@ -71,10 +72,13 @@ class LongestPalindromicSubstring {
     private static boolean isPalindromeSubstring(String str) {
         int length = str.length();
         for (int i = 0; i < length / 2; i++) {
+            // 找出该元素作为回文子串的起始位置还有结束位置
             if (str.charAt(i) != str.charAt(length - i - 1)) {
+                // 如果其中一个不相同，证明该字符串不是回文串
                 return false;
             }
         }
+        // 如果字符都相同，证明该字符串是回文串
         return true;
     }
 
@@ -94,12 +98,16 @@ class LongestPalindromicSubstring {
             int oddLength = getExpandAroundCenterLength(str, i, i);
             // 长度是偶数
             int evenLength = getExpandAroundCenterLength(str, i, i + 1);
+            // 得到最大长度
             int maxLength = Math.max(oddLength, evenLength);
             if (maxLength > end - start) {
+                // 得到起始位置
                 start = i - (maxLength - 1) / 2;
+                // 得到结束位置
                 end = i + maxLength / 2;
             }
         }
+        // 截取对应的字符
         return str.substring(start, end + 1);
     }
 
@@ -112,10 +120,13 @@ class LongestPalindromicSubstring {
      * @return 长度
      */
     private static int getExpandAroundCenterLength(String str, int left, int right) {
+        // 找出该元素作为回文子串的起始位置还有结束位置
         while (left >= 0 && right < str.length() && str.charAt(left) == str.charAt(right)) {
+            // 如果符合条件，左指针向左移动一格，右指针向右移动一格
             left--;
             right++;
         }
+        // 得到长度
         return right - left - 1;
     }
 }

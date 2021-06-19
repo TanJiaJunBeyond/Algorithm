@@ -36,7 +36,6 @@ object ZigZagConversionKotlin {
     }
 
     /**
-     * 双指针
      * 时间复杂度：O(N)，其中N是字符串的长度
      * 空间复杂度：O(N)
      *
@@ -46,14 +45,18 @@ object ZigZagConversionKotlin {
      */
     private fun convert(str: String, numRows: Int): String {
         if (numRows == 1) {
+            // 如果只是一行的话，就直接返回该字符串
             return str
         }
-        // 根据长度是行数的容量StringBuilder数组
+        // 创建长度是行数的StringBuilder数组，并且每个元素都创建StringBuilder对象
         val stringBuilders = Array(numRows, init = { StringBuilder() })
+        // 索引
         var index = 0
+        // 行数
         var row = 0
         val length = str.length
         while (index < length) {
+            // 从第一行开始，按照行数添加到对应的数组，并且追加字符，然后一直遍历到最后一行对应的数组
             while (index < length && row < numRows) {
                 stringBuilders[row++].append(str[index++])
             }
@@ -61,6 +64,7 @@ object ZigZagConversionKotlin {
             // 此时row是最后一行，所以我们需要回到倒数第二行，执行以下逻辑
             row = numRows - 2
 
+            // 从倒数第二行开始，按照行数添加到对应的数组，并且追加字符，然后一直遍历到第一行的对应的数组
             while (index < length && row >= 0) {
                 stringBuilders[row--].append(str[index++])
             }
@@ -68,8 +72,10 @@ object ZigZagConversionKotlin {
             // 此时row是-1，所以我们需要回到第二行，执行以下逻辑
             row += 2
         }
+        // 创建一个新的StringBuilder，将每一行对应的StringBuilder数组对应的StringBuilder追加到这个对象
         val resultSB = StringBuilder()
         stringBuilders.forEach { resultSB.append(it) }
+        // 将这个StringBuilder转成字符串
         return resultSB.toString()
     }
 

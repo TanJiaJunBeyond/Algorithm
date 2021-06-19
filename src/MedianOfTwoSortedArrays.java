@@ -64,19 +64,27 @@ class MedianOfTwoSortedArrays {
     public static double findMedianSortedArrays(int[] firstNumbers, int[] secondNumbers) {
         int len1 = firstNumbers.length;
         int len2 = secondNumbers.length;
+        // 合并后的数组的索引
         int index = 0;
+        // 第一个数组的指针，下面用i指针描述
         int i = 0;
+        // 第二个数组的指针，下面用j指针描述
         int j = 0;
         // 合并两个数组
+        // 创建一个大小是两个数组之和的数组
         int[] arrays = new int[len1 + len2];
         while (i < len1 || j < len2) {
             if (i == len1) {
+                // 如果第一个数组遍历完毕后，就继续遍历第二个数组
                 arrays[index++] = secondNumbers[j++];
             } else if (j == len2) {
+                // 如果第二个数组遍历完毕后，就继续遍历第一个数组
                 arrays[index++] = firstNumbers[i++];
             } else if (firstNumbers[i] < secondNumbers[j]) {
+                // 如果第一个数组的元素小于第二个数组的元素，就将第一个数组中的该元素添加到合并后的新数组，同时将i指针向右移动一格
                 arrays[index++] = firstNumbers[i++];
             } else {
+                // 如果第一个数组的元素大于第二个数组的元素，就将第二个数组中的该元素添加到合并后的新数组，同时将j指针向右移动一格
                 arrays[index++] = secondNumbers[j++];
             }
         }
@@ -84,8 +92,10 @@ class MedianOfTwoSortedArrays {
         double median;
         int length = arrays.length;
         if (length % 2 == 0) {
+            // 如果是长度是偶数，就找出这条中线旁边的两个元素，然后相加之后除以2得到结果
             median = (arrays[length / 2] + arrays[length / 2 - 1]) / 2.0D;
         } else {
+            // 如果是长度是奇数，就找出这条中线对应的元素，该元素就是结果
             median = arrays[length / 2];
         }
         return median;

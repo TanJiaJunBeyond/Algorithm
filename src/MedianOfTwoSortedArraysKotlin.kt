@@ -14,7 +14,7 @@ object MedianOfTwoSortedArraysKotlin {
 
         val firstNumbers = intArrayOf(1, 3)
         val secondNumbers = intArrayOf(2)
-        println(MedianOfTwoSortedArrays.findMedianSortedArrays(firstNumbers, secondNumbers))
+        println(findMedianSortedArrays(firstNumbers, secondNumbers))
 
         print("\n")
 
@@ -23,7 +23,7 @@ object MedianOfTwoSortedArraysKotlin {
 
         val thirdNumbers = intArrayOf(1, 2)
         val fourthNumbers = intArrayOf(3, 4)
-        println(MedianOfTwoSortedArrays.findMedianSortedArrays(thirdNumbers, fourthNumbers))
+        println(findMedianSortedArrays(thirdNumbers, fourthNumbers))
 
         print("\n")
 
@@ -32,7 +32,7 @@ object MedianOfTwoSortedArraysKotlin {
 
         val fifthNumbers = intArrayOf(0, 0)
         val sixthNumbers = intArrayOf(0, 0)
-        println(MedianOfTwoSortedArrays.findMedianSortedArrays(fifthNumbers, sixthNumbers))
+        println(findMedianSortedArrays(fifthNumbers, sixthNumbers))
 
         print("\n")
 
@@ -41,7 +41,7 @@ object MedianOfTwoSortedArraysKotlin {
 
         val seventhNumbers = intArrayOf()
         val eightNumbers = intArrayOf(1)
-        println(MedianOfTwoSortedArrays.findMedianSortedArrays(seventhNumbers, eightNumbers))
+        println(findMedianSortedArrays(seventhNumbers, eightNumbers))
 
         print("\n")
 
@@ -50,7 +50,7 @@ object MedianOfTwoSortedArraysKotlin {
 
         val ninthNumbers = intArrayOf(2)
         val tenthNumbers = intArrayOf()
-        println(MedianOfTwoSortedArrays.findMedianSortedArrays(ninthNumbers, tenthNumbers))
+        println(findMedianSortedArrays(ninthNumbers, tenthNumbers))
     }
 
     /**
@@ -65,24 +65,34 @@ object MedianOfTwoSortedArraysKotlin {
     private fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {
         val size1 = nums1.size
         val size2 = nums2.size
+        // 合并后的数组的索引
         var index = 0
+        // 第一个数组的指针，下面用i指针描述
         var i = 0
+        // 第二个数组的指针，下面用j指针描述
         var j = 0
         // 合并两个数组
+        // 创建一个大小是两个数组之和的数组
         val arrays = IntArray(size1 + size2)
         while (i < size1 || j < size2) {
             when {
+                // 如果第一个数组遍历完毕后，就继续遍历第二个数组
                 i == size1 -> arrays[index++] = nums2[j++]
+                // 如果第二个数组遍历完毕后，就继续遍历第一个数组
                 j == size2 -> arrays[index++] = nums1[i++]
+                // 如果第一个数组的元素小于第二个数组的元素，就将第一个数组中的该元素添加到合并后的新数组，同时将i指针向右移动一格
                 nums1[i] < nums2[j] -> arrays[index++] = nums1[i++]
+                // 如果第一个数组的元素大于第二个数组的元素，就将第二个数组中的该元素添加到合并后的新数组，同时将j指针向右移动一格
                 else -> arrays[index++] = nums2[j++]
             }
         }
         // 找出数组的中位数
         val size = arrays.size
         return if (size % 2.0 == 0.0) {
+            // 如果是长度是偶数，就找出这条中线旁边的两个元素，然后相加之后除以2得到结果
             (arrays[size / 2] + arrays[size / 2 - 1]) / 2.0
         } else {
+            // 如果是长度是奇数，就找出这条中线对应的元素，该元素就是结果
             arrays[size / 2].toDouble()
         }
     }
