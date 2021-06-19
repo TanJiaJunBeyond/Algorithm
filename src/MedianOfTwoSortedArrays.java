@@ -92,10 +92,10 @@ class MedianOfTwoSortedArrays {
         double median;
         int length = arrays.length;
         if (length % 2 == 0) {
-            // 如果是长度是偶数，就找出这条中线旁边的两个元素，然后相加之后除以2得到结果
+            // 如果数组长度是偶数，就找出这条中线旁边的两个元素，然后相加之后除以2得到结果
             median = (arrays[length / 2] + arrays[length / 2 - 1]) / 2.0D;
         } else {
-            // 如果是长度是奇数，就找出这条中线对应的元素，该元素就是结果
+            // 如果数组长度是奇数，就找出这条中线对应的元素，该元素就是结果
             median = arrays[length / 2];
         }
         return median;

@@ -89,10 +89,10 @@ object MedianOfTwoSortedArraysKotlin {
         // 找出数组的中位数
         val size = arrays.size
         return if (size % 2.0 == 0.0) {
-            // 如果是长度是偶数，就找出这条中线旁边的两个元素，然后相加之后除以2得到结果
+            // 如果数组长度是偶数，就找出这条中线旁边的两个元素，然后相加之后除以2得到结果
             (arrays[size / 2] + arrays[size / 2 - 1]) / 2.0
         } else {
-            // 如果是长度是奇数，就找出这条中线对应的元素，该元素就是结果
+            // 如果数组长度是奇数，就找出这条中线对应的元素，该元素就是结果
             arrays[size / 2].toDouble()
         }
     }
