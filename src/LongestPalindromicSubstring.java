@@ -40,7 +40,7 @@ class LongestPalindromicSubstring {
     }
 
     /**
-     * 方法一：枚举算法
+     * 方法一：枚举
      * 时间复杂度：O(N^3)，其中N是字符串的长度
      * 空间复杂度：O(1)
      *
