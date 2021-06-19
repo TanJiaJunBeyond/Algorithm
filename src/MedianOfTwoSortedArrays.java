@@ -71,7 +71,7 @@ class MedianOfTwoSortedArrays {
         // 第二个数组的指针，下面用j指针描述
         int j = 0;
         // 合并两个数组
-        // 创建一个大小是两个数组之和的数组
+        // 创建一个大小是两个数组长度之和的数组
         int[] arrays = new int[len1 + len2];
         while (i < len1 || j < len2) {
             if (i == len1) {

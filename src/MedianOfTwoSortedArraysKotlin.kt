@@ -72,7 +72,7 @@ object MedianOfTwoSortedArraysKotlin {
         // 第二个数组的指针，下面用j指针描述
         var j = 0
         // 合并两个数组
-        // 创建一个大小是两个数组之和的数组
+        // 创建一个大小是两个数组长度之和的数组
         val arrays = IntArray(size1 + size2)
         while (i < size1 || j < size2) {
             when {
