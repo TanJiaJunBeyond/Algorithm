@@ -1,5 +1,9 @@
 /**
  * Created by TanJiaJun on 2021/6/26.
+ * 7. 整数反转（Reverse Integer）
+ * 难度：简单
+ *
+ * @see <a href="https://leetcode-cn.com/problems/reverse-integer/">Reverse Integer</a>
  */
 object ReverseIntegerKotlin {
 
@@ -38,12 +42,21 @@ object ReverseIntegerKotlin {
         print("\n")
     }
 
+    /**
+     * 时间复杂度：O(log|n|)，其中n是整型x的位数
+     * 空间复杂度：O(1)
+     *
+     * @param x 整型x
+     * @return 结果
+     */
     private fun reverse(x: Int): Int {
         var result = 0
         var number = x
         while (number != 0) {
+            // 得到最后一位，例如：123的3
             val digit = number % 10
             if (result > -214748364 || (result == -214748364 && digit < -8)) {
+                // 判断结果是否小于Integer.MIN_VALUE，也就是是否小于-2147483648
                 return 0
             }
             if (result < 214748364 || (result == 214748364 && digit > 7)) {

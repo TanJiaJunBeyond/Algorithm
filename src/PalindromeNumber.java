@@ -37,8 +37,6 @@ class PalindromeNumber {
 
         int fourthNumber = -101;
         System.out.println(isPalindrome(fourthNumber));
-
-        System.out.print("\n");
     }
 
     /**

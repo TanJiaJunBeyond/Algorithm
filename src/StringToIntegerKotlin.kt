@@ -2,6 +2,10 @@ import java.util.regex.Pattern
 
 /**
  * Created by TanJiaJun on 2021/6/26.
+ * 8. 字符串转整数（atoi）（String to Integer(atoi)）
+ * 难度：简单
+ *
+ * @see <a href="https://leetcode-cn.com/problems/string-to-integer-atoi/">String to Integer(atoi)</a>
  */
 object StringToIntegerKotlin {
 
@@ -46,7 +50,15 @@ object StringToIntegerKotlin {
         println(myAtoi(fifthStr))
     }
 
+    /**
+     * 时间复杂度：O(N)，其中N是字符串的长度
+     * 空间复杂度：O(1)
+     *
+     * @param s 字符串
+     * @return 结果
+     */
     private fun myAtoi(s: String): Int {
+        // 去掉字符串前面和后面的空格
         val pattern = Pattern.compile("^[\\+\\-]?\\d+")
         val matcher = pattern.matcher(s)
         var result = 0
@@ -54,6 +66,7 @@ object StringToIntegerKotlin {
             result = try {
                 s.toInt()
             } catch (exception: NumberFormatException) {
+                // 如果抛出NumberFormatException异常，证明小于整型的最小值，大于整型的最大值
                 if (s[0] == '-') Int.MIN_VALUE else Int.MAX_VALUE
             }
         }

@@ -1,5 +1,9 @@
 /**
  * Created by TanJiaJun on 2021/6/26.
+ * 9. 回文数（Palindrome Number）
+ * 难度：简单
+ *
+ * @see <a href="https://leetcode-cn.com/problems/palindrome-number/">Palindrome Number</a>
  */
 object PalindromeNumberKotlin {
 
