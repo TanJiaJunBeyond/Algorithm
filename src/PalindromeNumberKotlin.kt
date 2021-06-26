@@ -38,8 +38,6 @@ object PalindromeNumberKotlin {
 
         val fourthNumber = -101
         println(isPalindrome(fourthNumber))
-
-        print("\n")
     }
 
     /**
