@@ -60,8 +60,10 @@ object ReverseIntegerKotlin {
                 return 0
             }
             if (result < 214748364 || (result == 214748364 && digit > 7)) {
+                // 判断结果是否大于Integer.MAX_VALUE，也就是是否大于2147483647
                 return 0
             }
+            // 得到除了最后一位的前几位，例如：123的12
             number /= 10
             result = result * 10 + digit
         }
