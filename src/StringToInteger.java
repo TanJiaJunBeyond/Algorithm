@@ -60,6 +60,8 @@ class StringToInteger {
     private static int myAtoi(String s) {
         // 去掉字符串前面和后面的空格
         s = s.trim();
+        // ^[\+\-]?的意思是判断字符是否匹配+或者-，匹配零次或者一次
+        // \d+的意思是判断字符是否匹配[0-9]，匹配一次或者多次
         Pattern pattern = Pattern.compile("^[\\+\\-]?\\d+");
         Matcher matcher = pattern.matcher(s);
         boolean isInteger = matcher.find();

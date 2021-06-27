@@ -55,11 +55,11 @@ object ReverseIntegerKotlin {
         while (number != 0) {
             // 得到最后一位，例如：123的3
             val digit = number % 10
-            if (result > -214748364 || (result == -214748364 && digit < -8)) {
+            if (result < -214748364 || (result == -214748364 && digit < -8)) {
                 // 判断结果是否小于Integer.MIN_VALUE，也就是是否小于-2147483648
                 return 0
             }
-            if (result < 214748364 || (result == 214748364 && digit > 7)) {
+            if (result > 214748364 || (result == 214748364 && digit > 7)) {
                 // 判断结果是否大于Integer.MAX_VALUE，也就是是否大于2147483647
                 return 0
             }

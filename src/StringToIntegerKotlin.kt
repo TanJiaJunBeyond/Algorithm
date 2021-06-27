@@ -59,15 +59,18 @@ object StringToIntegerKotlin {
      */
     private fun myAtoi(s: String): Int {
         // 去掉字符串前面和后面的空格
+        val str = s.trim()
+        // ^[\+\-]?的意思是判断字符是否匹配+或者-，匹配零次或者一次
+        // \d+的意思是判断字符是否匹配[0-9]，匹配一次或者多次
         val pattern = Pattern.compile("^[\\+\\-]?\\d+")
-        val matcher = pattern.matcher(s)
+        val matcher = pattern.matcher(str)
         var result = 0
         if (matcher.find()) {
             result = try {
-                s.toInt()
+                str.toInt()
             } catch (exception: NumberFormatException) {
                 // 如果抛出NumberFormatException异常，证明小于整型的最小值，大于整型的最大值
-                if (s[0] == '-') Int.MIN_VALUE else Int.MAX_VALUE
+                if (str[0] == '-') Int.MIN_VALUE else Int.MAX_VALUE
             }
         }
         return result
