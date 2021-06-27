@@ -1,9 +1,5 @@
 /**
  * Created by TanJiaJun on 2021/6/20.
- */
-
-/**
- * Created by TanJiaJun on 2021/6/20.
  * 11. 盛最多水的容器（Container With Most Water）
  * 难度：简单
  *
