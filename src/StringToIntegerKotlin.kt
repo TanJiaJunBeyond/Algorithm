@@ -64,10 +64,11 @@ object StringToIntegerKotlin {
         // \d+的意思是判断字符是否匹配[0-9]，匹配一次或者多次
         val pattern = Pattern.compile("^[\\+\\-]?\\d+")
         val matcher = pattern.matcher(str)
+        val isInteger = matcher.find()
         var result = 0
-        if (matcher.find()) {
+        if (isInteger) {
             result = try {
-                str.toInt()
+                str.substring(startIndex = matcher.start(), endIndex = matcher.end()).toInt()
             } catch (exception: NumberFormatException) {
                 // 如果抛出NumberFormatException异常，证明小于整型的最小值，大于整型的最大值
                 if (str[0] == '-') Int.MIN_VALUE else Int.MAX_VALUE
