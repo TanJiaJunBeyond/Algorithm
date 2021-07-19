@@ -8,17 +8,17 @@
 class ContainerWithMostWater {
 
     public static void main(String[] args) {
-        int[] firstHeight = {1, 8, 6, 2, 5, 4, 8, 3, 7};
-        System.out.println(maxArea(firstHeight));
+        int[] firstHeights = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        System.out.println(maxArea(firstHeights));
 
-        int[] secondHeight = {1, 1};
-        System.out.println(maxArea(secondHeight));
+        int[] secondHeights = {1, 1};
+        System.out.println(maxArea(secondHeights));
 
-        int[] thirdHeight = {4, 3, 2, 1, 4};
-        System.out.println(maxArea(thirdHeight));
+        int[] thirdHeights = {4, 3, 2, 1, 4};
+        System.out.println(maxArea(thirdHeights));
 
-        int[] fourthHeight = {1, 2, 1};
-        System.out.println(maxArea(fourthHeight));
+        int[] fourthHeights = {1, 2, 1};
+        System.out.println(maxArea(fourthHeights));
     }
 
     /**
