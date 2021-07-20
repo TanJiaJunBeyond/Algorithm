@@ -8,14 +8,32 @@
 class IntegerToRoman {
 
     public static void main(String[] args) {
+        // 示例一
+        System.out.print("示例一：");
+
         int firstNumber = 3;
         System.out.println(intToRoman(firstNumber));
+
+        System.out.print("\n");
+
+        // 示例二
+        System.out.print("示例二：");
 
         int secondNumber = 4;
         System.out.println(intToRoman(secondNumber));
 
+        System.out.print("\n");
+
+        // 示例三
+        System.out.print("示例三：");
+
         int thirdNumber = 58;
         System.out.println(intToRoman(thirdNumber));
+
+        System.out.print("\n");
+
+        // 示例四
+        System.out.print("示例四：");
 
         int fourthNumber = 1994;
         System.out.println(intToRoman(fourthNumber));

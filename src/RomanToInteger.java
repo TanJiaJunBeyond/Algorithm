@@ -8,22 +8,52 @@
 class RomanToInteger {
 
     public static void main(String[] args) {
+        // 示例一
+        System.out.print("示例一：");
+
         String firstStr = "III";
         System.out.println(romanToInt(firstStr));
+
+        System.out.print("\n");
+
+        // 示例二
+        System.out.print("示例二：");
 
         String secondStr = "IV";
         System.out.println(romanToInt(secondStr));
 
+        System.out.print("\n");
+
+        // 示例三
+        System.out.print("示例三：");
+
         String thirdStr = "IX";
         System.out.println(romanToInt(thirdStr));
 
+        System.out.print("\n");
+
+        // 示例四
+        System.out.print("示例四：");
+
         String fourthStr = "LVIII";
         System.out.println(romanToInt(fourthStr));
+
+        System.out.print("\n");
+
+        // 示例五
+        System.out.print("示例五：");
 
         String fifthStr = "MCMXCIV";
         System.out.println(romanToInt(fifthStr));
     }
 
+    /**
+     * 时间复杂度：O(N)，其中N是字符串s的长度
+     * 空间复杂度：O(1)
+     *
+     * @param s 罗马数字
+     * @return 整数
+     */
     private static int romanToInt(String s) {
         // 得到第一个罗马数字
         int preNum = getInteger(s.charAt(0));
@@ -46,6 +76,12 @@ class RomanToInteger {
         return result;
     }
 
+    /**
+     * 通过罗马数字字符得到对应的整数
+     *
+     * @param roman 罗马数字字符
+     * @return 整数
+     */
     private static int getInteger(char roman) {
         // 枚举罗马数字七种字符和对应的整数
         return switch (roman) {
