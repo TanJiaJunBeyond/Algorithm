@@ -22,7 +22,7 @@ object LongestCommonPrefixKotlin {
         var result: String = strs[0]
         for (i in 1 until strs.size) {
             result = getLongestCommonPrefix(result, strs[i])
-            if (result.isEmpty) {
+            if (result.isEmpty()) {
                 break
             }
         }
