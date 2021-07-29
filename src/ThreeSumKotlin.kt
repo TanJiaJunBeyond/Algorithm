@@ -3,7 +3,7 @@ import java.util.*
 /**
  * Created by TanJiaJun on 2021/7/25.
  * 15. 三数之和（3Sum）
- * 难度：简单
+ * 难度：中等
  *
  * @see <a href="https://leetcode-cn.com/problems/3sum/">3Sum</a>
  */
