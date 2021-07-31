@@ -3,6 +3,10 @@ import kotlin.math.abs
 
 /**
  * Created by TanJiaJun on 2021/7/31.
+ * 16. 最接近的三数之和（3Sum Closest）
+ * 难度：简单
+ *
+ * @see <a href="https://leetcode-cn.com/problems/3sum-closest/">3Sum Closest</a>
  */
 object ThreeSumClosestKotlin {
 

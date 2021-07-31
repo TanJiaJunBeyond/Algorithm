@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 /**
  * Created by TanJiaJun on 2021/7/30.
- * 15. 最接近的三数之和（3Sum Closest）
- * 难度：中等
+ * 16. 最接近的三数之和（3Sum Closest）
+ * 难度：简单
  *
  * @see <a href="https://leetcode-cn.com/problems/3sum-closest/">3Sum Closest</a>
  */
