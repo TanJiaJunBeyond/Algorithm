@@ -18,10 +18,10 @@ class ThreeSumClosest {
     private static int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
         int length = nums.length;
-        int right = length - 1;
-        int result = nums[0] + nums[1] + nums[right];
+        int result = nums[0] + nums[1] + nums[2];
         for (int i = 0; i < length; i++) {
             int left = i + 1;
+            int right = length - 1;
             while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
                 if (Math.abs(target - sum) < Math.abs(target - result)) {
