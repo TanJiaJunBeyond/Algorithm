@@ -10,7 +10,7 @@ import java.util.List;
  */
 class LetterCombinationsOfAPhoneNumber {
 
-    private static final char[][] chars = {
+    private static final char[][] letters = {
             {'a', 'b', 'c'},
             {'d', 'e', 'f'},
             {'g', 'h', 'i'},
@@ -35,8 +35,7 @@ class LetterCombinationsOfAPhoneNumber {
     private static List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
         if (!digits.isEmpty()) {
-            StringBuilder stringBuilder = new StringBuilder();
-            backTracking(0, stringBuilder, digits, result);
+            backTracking(0, new StringBuilder(), digits, result);
         }
         return result;
     }
@@ -50,9 +49,9 @@ class LetterCombinationsOfAPhoneNumber {
             return;
         }
         int charsIndex = digits.charAt(index) - '2';
-        char[] strings = chars[charsIndex];
-        for (char string : strings) {
-            stringBuilder.append(string);
+        char[] chars = letters[charsIndex];
+        for (char c : chars) {
+            stringBuilder.append(c);
             backTracking(index + 1, stringBuilder, digits, result);
             stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         }
