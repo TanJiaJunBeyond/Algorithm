@@ -28,7 +28,7 @@ class ThreeSum {
             return result;
         }
         Arrays.sort(nums);
-        for (int i = 0, length = nums.length; i < length; i++) {
+        for (int i = 0, length = nums.length; i < length - 2; i++) {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }

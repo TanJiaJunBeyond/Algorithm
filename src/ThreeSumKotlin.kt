@@ -25,7 +25,7 @@ object ThreeSumKotlin {
             mutableListOf<List<Int>>().apply {
                 Arrays.sort(nums)
                 if (nums.size > 2) {
-                    for (i in nums.indices) {
+                    for (i in 0 until nums.size - 2) {
                         if (i > 0 && nums[i] == nums[i - 1]) {
                             continue
                         }
