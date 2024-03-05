@@ -29,8 +29,8 @@ object LongestCommonPrefixKotlin {
     /**
      * 横向扫描
      *
-     * 时间复杂度：O(mn)，其中m是字符串数组strs中的字符串平均长度，n是字符串数组strs的长度
-     * 空间复杂度：O(1)
+     * 时间复杂度：O(mn)，其中m是字符串数组strs中的字符串平均长度，n是字符串数组strs的长度。
+     * 空间复杂度：O(1)，使用的空间复杂度为常数。
      *
      * @param strs 字符串数据
      * @return 最长公共前缀字符串
