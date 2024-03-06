@@ -25,7 +25,7 @@ class LongestCommonPrefix {
 
     /**
      * 横向扫描
-     *
+     * <p>
      * 时间复杂度：O(mn)，其中m是字符串数组strs中的字符串平均长度，n是字符串数组strs的长度。
      * 空间复杂度：O(1)，使用的空间复杂度为常数。
      *
@@ -42,7 +42,8 @@ class LongestCommonPrefix {
             // 得到当前两个字符串的公共前缀
             result = getLongestCommonPrefix(result, strs[i]);
             if (result.length() == 0) {
-                // 如果结果返回空字符串，也就是当前两个字符串没有公共前缀，就跳出循环
+                // 如果结果返回空字符串，说明当前两个字符串不存在公共前缀，证明该字符串数组中所有字符串之间不存在公共前缀，
+                // 所以跳出循环，不再遍历剩下的字符串，返回空字符串
                 break;
             }
         }
