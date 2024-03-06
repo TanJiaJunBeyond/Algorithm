@@ -42,7 +42,7 @@ class LongestCommonPrefix {
             // 得到当前两个字符串的公共前缀
             result = getLongestCommonPrefix(result, strs[i]);
             if (result.length() == 0) {
-                // 如果result返回空字符串，说明当前两个字符串不存在公共前缀，证明该字符串数组中所有字符串之间不存在公共前缀，
+                // 如果result是空字符串，说明当前两个字符串不存在公共前缀，证明该字符串数组中所有字符串之间不存在公共前缀，
                 // 所以跳出循环，不再遍历剩下的字符串，返回空字符串
                 break;
             }
